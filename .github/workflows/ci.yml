@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/macos-dependencies
 
       - name: Build the template
-        run: cargo build
+        run: cargo build --all-features --all-targets --locked --workspace
         timeout-minutes: 90
 
       - name: Run clippy
