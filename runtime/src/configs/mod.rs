@@ -24,10 +24,11 @@
 // For more information, please refer to <http://unlicense.org>
 
 mod xcm_config;
-
 // Substrate and Polkadot dependencies
 use cumulus_pallet_parachain_system::RelayNumberMonotonicallyIncreases;
 use cumulus_primitives_core::{AggregateMessageOrigin, ParaId};
+
+
 use frame_support::{
 	derive_impl,
 	dispatch::DispatchClass,
@@ -59,8 +60,9 @@ use super::{
 	MessageQueue, Nonce, PalletInfo, ParachainSystem, Runtime, RuntimeCall, RuntimeEvent,
 	RuntimeFreezeReason, RuntimeHoldReason, RuntimeOrigin, RuntimeTask, Session, SessionKeys,
 	System, WeightToFee, XcmpQueue, AVERAGE_ON_INITIALIZE_RATIO, EXISTENTIAL_DEPOSIT, HOURS,
-	MAXIMUM_BLOCK_WEIGHT, MICRO_UNIT, NORMAL_DISPATCH_RATIO, SLOT_DURATION, VERSION,
+	MAXIMUM_BLOCK_WEIGHT, MICRO_UNIT, NORMAL_DISPATCH_RATIO, SLOT_DURATION, VERSION, 
 };
+//use super::OriginCaller;
 use xcm_config::{RelayLocation, XcmOriginToTransactDispatchOrigin};
 
 parameter_types! {
@@ -307,4 +309,8 @@ impl pallet_collator_selection::Config for Runtime {
 impl pallet_parachain_template::Config for Runtime {
 	type RuntimeEvent = RuntimeEvent;
 	type WeightInfo = pallet_parachain_template::weights::SubstrateWeight<Runtime>;
+}
+
+impl helloworld_pallet::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
 }

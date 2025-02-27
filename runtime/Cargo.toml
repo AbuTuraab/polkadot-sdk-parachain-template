@@ -9,6 +9,8 @@ repository.workspace = true
 edition.workspace = true
 publish = false
 
+
+
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
 
@@ -75,6 +77,7 @@ cumulus-primitives-storage-weight-reclaim.workspace = true
 pallet-collator-selection.workspace = true
 parachains-common.workspace = true
 parachain-info.workspace = true
+helloworld_pallet = {path="../pallets/helloworld_pallet", default-features = false }
 
 [features]
 default = ["std"]
@@ -131,6 +134,7 @@ std = [
 	"xcm-builder/std",
 	"xcm-executor/std",
 	"xcm/std",
+	"helloworld_pallet/std",
 ]
 
 runtime-benchmarks = [
