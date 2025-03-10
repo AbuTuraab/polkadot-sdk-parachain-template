@@ -2283,6 +2283,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "custom-pallet"
+version = "0.1.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+]
+
+[[package]]
 name = "cxx"
 version = "1.0.129"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3816,13 +3826,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
-name = "helloworld_pallet"
+name = "helloworld_pallet_template"
 version = "0.1.0"
 dependencies = [
+ "frame-benchmarking",
  "frame-support",
  "frame-system",
  "parity-scale-codec",
  "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
 ]
 
 [[package]]
@@ -7615,6 +7629,7 @@ dependencies = [
  "cumulus-primitives-core",
  "cumulus-primitives-storage-weight-reclaim",
  "cumulus-primitives-utility",
+ "custom-pallet",
  "docify",
  "frame-benchmarking",
  "frame-executive",
@@ -7624,7 +7639,7 @@ dependencies = [
  "frame-system-benchmarking",
  "frame-system-rpc-runtime-api",
  "frame-try-runtime",
- "helloworld_pallet",
+ "helloworld_pallet_template",
  "hex-literal",
  "log",
  "pallet-aura",
@@ -7638,6 +7653,7 @@ dependencies = [
  "pallet-timestamp",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
+ "pallet-utility",
  "pallet-xcm",
  "parachains-common",
  "parity-scale-codec",

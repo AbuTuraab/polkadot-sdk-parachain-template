@@ -310,7 +310,14 @@ mod runtime {
 	pub type TemplatePallet = pallet_parachain_template;
 
 	#[runtime::pallet_index(51)]
-	 pub type CustomPallet = helloworld_pallet;
+	 pub type HelloworldPallet = helloworld_pallet_template;
+
+	 #[runtime::pallet_index(52)]
+	 pub type Utility = pallet_utility;
+ 
+	 #[runtime::pallet_index(53)]
+	 pub type CustomPallet = custom_pallet;
+
 }
 
 #[docify::export(register_validate_block)]

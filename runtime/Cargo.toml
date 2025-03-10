@@ -19,6 +19,8 @@ substrate-wasm-builder = { optional = true, workspace = true, default-features =
 docify = { workspace = true }
 
 [dependencies]
+pallet-utility = { version = "38.0.0", default-features = false }
+custom-pallet = { path = "../pallets/custom-pallet", default-features = false }
 codec = { features = [
 	"derive",
 ], workspace = true }
@@ -77,11 +79,13 @@ cumulus-primitives-storage-weight-reclaim.workspace = true
 pallet-collator-selection.workspace = true
 parachains-common.workspace = true
 parachain-info.workspace = true
-helloworld_pallet = {path="../pallets/helloworld_pallet", default-features = false }
+helloworld_pallet_template.workspace = true
 
 [features]
 default = ["std"]
 std = [
+	"pallet-utility/std",
+  "custom-pallet/std",
 	"codec/std",
 	"cumulus-pallet-aura-ext/std",
 	"cumulus-pallet-parachain-system/std",
@@ -134,7 +138,7 @@ std = [
 	"xcm-builder/std",
 	"xcm-executor/std",
 	"xcm/std",
-	"helloworld_pallet/std",
+	"helloworld_pallet_template/std",
 ]
 
 runtime-benchmarks = [
@@ -161,6 +165,7 @@ runtime-benchmarks = [
 	"sp-runtime/runtime-benchmarks",
 	"xcm-builder/runtime-benchmarks",
 	"xcm-executor/runtime-benchmarks",
+	"helloworld_pallet_template/runtime-benchmarks",
 ]
 
 try-runtime = [
@@ -186,6 +191,7 @@ try-runtime = [
 	"parachain-info/try-runtime",
 	"polkadot-runtime-common/try-runtime",
 	"sp-runtime/try-runtime",
+	"helloworld_pallet_template/try-runtime"
 ]
 
 # Enable the metadata hash generation.
