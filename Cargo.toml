@@ -6,12 +6,15 @@ repository = "https://github.com/paritytech/polkadot-sdk-parachain-template.git"
 edition = "2021"
 
 [workspace]
-members = ["node", "pallets/template", "runtime"]
+members = ["node", "pallets/helloworld_pallet", "pallets/new_helloworld_pallet", "pallets/template", "runtime"]
 resolver = "2"
 
 [workspace.dependencies]
 parachain-template-runtime = { path = "./runtime", default-features = false }
 pallet-parachain-template = { path = "./pallets/template", default-features = false }
+helloworld_pallet = { path = "./pallets/helloworld_pallet", default-features = false }
+new_helloworld_pallet = { path = "./pallets/new_helloworld_pallet", default-features = false }
+
 clap = { version = "4.5.10" }
 codec = { version = "3.6.12", default-features = false, package = "parity-scale-codec" }
 color-print = { version = "0.3.4" }

@@ -308,3 +308,12 @@ impl pallet_parachain_template::Config for Runtime {
 	type RuntimeEvent = RuntimeEvent;
 	type WeightInfo = pallet_parachain_template::weights::SubstrateWeight<Runtime>;
 }
+
+impl helloworld_pallet::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	
+}
+
+impl new_helloworld_pallet::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+}

@@ -308,7 +308,16 @@ mod runtime {
 	// Template
 	#[runtime::pallet_index(50)]
 	pub type TemplatePallet = pallet_parachain_template;
+
+	#[runtime::pallet_index(51)]
+	pub type HelloWorldPallet = helloworld_pallet;
+
+	#[runtime::pallet_index(52)]
+	pub type NewHelloworldPallet = new_helloworld_pallet;
 }
+
+
+    
 
 #[docify::export(register_validate_block)]
 cumulus_pallet_parachain_system::register_validate_block! {
